@@ -1,9 +1,10 @@
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
-module.exports = async (req, res) => {
+export default async (req, res) => {
   if (req.method === 'POST') {
     try {
       const { amount } = req.body;
+
       if (!amount || amount <= 0) {
         return res.status(400).json({ error: 'Invalid amount' });
       }
@@ -22,3 +23,4 @@ module.exports = async (req, res) => {
     res.status(405).json({ error: 'Method not allowed' });
   }
 };
+
