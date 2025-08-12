@@ -1,6 +1,7 @@
 {
   "name": "stripe-backend",
   "version": "1.0.0",
+  "type": "module",
   "dependencies": {
     "stripe": "^17.2.0"
   },
