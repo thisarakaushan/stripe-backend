@@ -4,7 +4,6 @@ module.exports = async (req, res) => {
   if (req.method === 'POST') {
     try {
       const { amount } = req.body;
-
       if (!amount || amount <= 0) {
         return res.status(400).json({ error: 'Invalid amount' });
       }
